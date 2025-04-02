@@ -55,6 +55,7 @@ class ChatViewModel @Inject constructor(
                 _isConversationEnd.update { true }
                 repository.closeWebSocket()
                 repository.clearChatHistory()
+                repository.startListeningToWebSocket()
                 loadChatSteps()
                 _isConversationEnd.update { false }
                 Log.d("ChatViewModel", "Database removed and conversation start again.")
